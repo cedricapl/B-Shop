@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BûShop - Paiement Sécurisé</title>
+    <link rel="stylesheet" href="templatemo-noir-fashion.css">
+    
+    <style>
+        .checkout-section {
+            padding: 150px 50px 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--bg-section); /* Fond clair du "featured" */
+            min-height: 80vh;
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Formulaire large, résumé plus petit */
+            gap: 50px;
+        }
+
+        @media (max-width: 900px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reprise du style du formulaire Contact (fond clair/blanc) */
+        .form-area {
+            background: #f7f7f7; /* Un fond très clair */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            color: var(--primary); /* Texte en noir sur fond clair */
+        }
+        
+        .form-area h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent-hover);
+            padding-bottom: 10px;
+        }
+
+        .form-row {
+            margin-bottom: 25px;
+        }
+        
+        /* Ajustement des inputs pour le fond clair */
+        .form-area input,
+        .form-area select {
+            width: 100%;
+            padding: 15px;
+            background: white; /* Fond des inputs en blanc */
+            border: 1px solid var(--text-muted);
+            color: var(--primary); /* Texte noir dans les champs */
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .form-area input:focus,
+        .form-area select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(144, 68, 54, 0.2);
+        }
+
+        .form-area label {
+            color: var(--primary); /* Labels en noir */
+        }
+
+        .form-group label {
+            font-size: 14px; /* Un peu plus grand que dans la page contact */
+        }
+
+        .form-group.card-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-group.card-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Récapitulatif de Commande */
+        .summary-area {
+            background: var(--primary); /* Fond sombre pour le contraste et la mise en avant */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+            height: fit-content;
+        }
+
+        .summary-area h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 25px;
+            border-bottom: 1px dashed var(--text-muted);
+            padding-bottom: 10px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .summary-total {
+            border-top: 2px solid var(--accent);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Bouton de paiement (reprise du style .form-submit) */
+        .checkout-btn {
+            margin-top: 30px;
+        }
+
+        .payment-methods-logos {
+            margin-top: 20px;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .payment-methods-logos img {
+            height: 30px;
+            margin: 0 5px;
+            filter: grayscale(100%);
+        }
+        
+        .secure-badge {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .secure-badge span {
+             color: var(--accent);
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#b5651d;stop-opacity:1" /> <stop offset="100%" style="stop-color:#ff9900;stop-opacity:1" /> </linearGradient>
+                    </defs>
+                    <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
+                </svg>
+                <span class="logo-text">BûShop</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">Accueil</a></li>
+                <li><a href="index.html#collections" class="nav-link">Nos Bûches</a></li>
+                <li><a href="index.html#featured" class="nav-link">Avis Clients</a></li>
+                <li><a href="index.html#contact" class="nav-link active">Paiement</a></li>
+                <li><a href="#" class="nav-cta">Valider</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="checkout-section" id="checkout">
+        <div class="section-header">
+            <h2 class="section-title">Validez Votre Commande</h2>
+            <p class="section-subtitle">Paiement 100% sécurisé et livraison garantie</p>
+        </div>
+        
+        <div class="checkout-container">
+            <div class="form-area">
+                <h3>Détails de Livraison & Facturation</h3>
+                <form id="checkoutForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="coFirstName">Prénom</label>
+                            <input type="text" id="coFirstName" name="firstName" placeholder="Jean" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="coLastName">Nom</label>
+                            <input type="text" id="coLastName" name="lastName" placeholder="Dupond" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coAddress">Adresse de Livraison</label>
+                        <input type="text" id="coAddress" name="address" placeholder="12 Rue du Foyer" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="coZip">Code Postal</label>
+                            <input type="text" id="coZip" name="zip" placeholder="75000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="coCity">Ville</label>
+                            <input type="text" id="coCity" name="city" placeholder="Paris" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coEmail">Email</label>
+                        <input type="email" id="coEmail" name="email" placeholder="jean@exemple.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coPhone">Téléphone (pour la livraison)</label>
+                        <input type="tel" id="coPhone" name="phone" placeholder="06 00 00 00 00" required>
+                    </div>
+
+                    <h3 style="margin-top: 50px;">Informations de Paiement</h3>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Numéro de Carte</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" required pattern="[0-9]{16}">
+                    </div>
+                    
+                    <div class="form-group card-details">
+                        <div class="form-group">
+                            <label for="cardName">Nom sur la Carte</label>
+                            <input type="text" id="cardName" name="cardName" placeholder="M. Jean DUPOND" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardExpiry">Expiration (MM/AA)</label>
+                            <input type="text" id="cardExpiry" name="cardExpiry" placeholder="12/26" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" id="cardCvv" name="cardCvv" placeholder="123" required pattern="\d{3,4}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required style="width: auto; margin-right: 10px;"> J'accepte les conditions générales de vente.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="form-submit checkout-btn">
+                        Payer <span>285.00€</span> et Valider la Commande
+                    </button>
+                </form>
+                <div class="secure-badge">Paiement sécurisé par <span>Stripe</span>. Vos données sont protégées.</div>
+            </div>
+            
+            <div class="summary-area">
+                <h3>Votre Panier BûShop</h3>
+                
+                <div class="summary-item">
+                    <span>Chêne Premium (50cm) - 2 Stères</span>
+                    <span>190.00€</span>
+                </div>
+                <div class="summary-item">
+                    <span>Filet de Bûches Sec (33cm) - 1 Filet</span>
+                    <span>15.00€</span>
+                </div>
+                <div class="summary-item">
+                    <span>Kit d'Allumage Naturel</span>
+                    <span>19.90€</span>
+                </div>
+                
+                <hr style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 20px 0;">
+
+                <div class="summary-item">
+                    <span>Sous-total HT</span>
+                    <span>234.90€</span>
+                </div>
+                <div class="summary-item">
+                    <span>TVA (20%)</span>
+                    <span>46.98€</span>
+                </div>
+                <div class="summary-item" style="font-weight: bold; color: var(--accent);">
+                    <span>Frais de Livraison Express (72H)</span>
+                    <span>3.12€</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>Montant Total (TTC)</span>
+                    <span>285.00€</span>
+                </div>
+
+                <div class="payment-methods-logos">
+                    <span class="payment-icon" style="width: auto; font-size: 14px; padding: 5px 10px;">VISA</span>
+                    <span class="payment-icon" style="width: auto; font-size: 14px; padding: 5px 10px;">MC</span>
+                    <span class="payment-icon" style="width: auto; font-size: 14px; padding: 5px 10px;">AMEX</span>
+                    <span class="payment-icon" style="width: auto; font-size: 14px; padding: 5px 10px;">PAYPAL</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BûShop. Tous droits réservés. | Conçu par <a href="" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration: none;">CGA</a></p>
+            <div class="payment-methods">
+                <div class="payment-icon">VISA</div>
+                <div class="payment-icon">MC</div>
+                <div class="payment-icon">AMEX</div>
+                <div class="payment-icon">PAY</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="templatemo-noir-scripts.js"></script>
+    <script>
+        // Le script JS pour gérer la navbar et le menu mobile (si tu l'as)
+        // ... (Tu peux ajouter ici le code pour la validation du formulaire de paiement) ...
+    </script>
+</body>
+</html>

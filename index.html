@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BûShop - Le Bois de Chauffage de Qualité</title>
+    <link rel="stylesheet" href="templatemo-noir-fashion.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#b5651d;stop-opacity:1" /> <stop offset="100%" style="stop-color:#ff9900;stop-opacity:1" /> </linearGradient>
+                    </defs>
+                    <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
+                </svg>
+                <span class="logo-text">BûShop</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#collections" class="nav-link">Nos Bûches</a></li>
+                <li><a href="#featured" class="nav-link">Avis Clients</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Commander !</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#collections">Nos Bûches</a></li>
+            <li><a href="#featured">Avis Clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-badge">Livraison Hiver 2025</div>
+                <h1 class="hero-title">
+                    <span class="line"><span>Chaleur,</span></span>
+                    <span class="line"><span>Confort <span class="accent">et Qualité</span></span></span>
+                    <span class="line"><span>Toute l'Année</span></span>
+                </h1>
+                <p class="hero-description">
+                    Découvrez notre sélection premium de bois de chauffage, scié, fendu et séché avec soin. **Prêt à brûler**, pour un confort optimal sans effort.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2 Ans</span>
+                        <span class="stat-label">Bois Séché (<20% Hum.)</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">72H</span>
+                        <span class="stat-label">Livraison Express</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Bois Français Certifié</span>
+                    </div>
+                </div>
+                <div class="cta-group">
+                    <a href="#collections" class="cta-button primary">Voir les Bûches</a>
+                    <a href="#contact" class="cta-button outline">Demander un Devis</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image-wrapper">
+                    <div class="hero-carousel">
+                        <div class="carousel-slide active">
+                            <img src="images/noir-fashion-hero-01.avif" alt="Image de bûches de bois"> 
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/noir-fashion-hero-02.avif" alt="Image de cheminée">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/noir-fashion-hero-03.avif" alt="Image de bois sec">
+                        </div>
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0"></span>
+                            <span class="indicator" data-slide="1"></span>
+                            <span class="indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+                    <div class="floating-tags">
+                        <div class="tag">Chêne & Hêtre</div>
+                        <div class="tag">33cm ou 50cm</div>
+                        <div class="tag">Bois Sec Garanti</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section class="collections" id="collections">
+        <div class="section-header">
+            <h2 class="section-title">Nos Catégories de Bois</h2>
+            <p class="section-subtitle">Foyer, poêle ou insert : trouvez le combustible parfait</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">Tout le Bois</button>
+            <button class="tab-btn" data-category="women">Bois Dur (Chêne, Hêtre)</button>
+            <button class="tab-btn" data-category="men">Bois Tendre (Bouleau, Sapin)</button>
+            <button class="tab-btn" data-category="accessories">Granulés & Pellets</button>
+            <button class="tab-btn" data-category="limited">Filet Express</button>
+        </div>
+
+        <div class="grid" id="collectionsGrid">
+            <div class="collection-card" data-category="women">
+                <div class="collection-thumbnail">
+                    <img src="images/C.jpg" alt="Bûches de Chêne 50cm">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Cœur de Chauffe</span>
+                    <h3 class="card-title">Chêne Premium</h3>
+                    <p class="card-subtitle">50cm - Séchage 2 Ans</p>
+                    <p class="card-price">Stère à partir de 95€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="limited">
+                <div class="collection-thumbnail">
+                    <img src="images/h.jpg" alt="Filet de bois sec 33cm">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Livraison Express</span>
+                    <h3 class="card-title">Filet de Bûches Sec</h3>
+                    <p class="card-subtitle">Prêt à l'emploi (33cm)</p>
+                    <p class="card-price">Filet de 40L à 15€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="men">
+                <div class="collection-thumbnail">
+                    <img src="images/ch.jpg" alt="Bois tendre pour allumage">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Allumage Facile</span>
+                    <h3 class="card-title">Bouleau / Mélange Léger</h3>
+                    <p class="card-subtitle">33cm - Idéal pour démarrer</p>
+                    <p class="card-price">Stère à partir de 85€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="accessories">
+                <div class="collection-thumbnail">
+                    <img src="images/f.jpg" alt="Sacs de Granulés Bois">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Pellets Certifiés</span>
+                    <h3 class="card-title">Granulés de Bois</h3>
+                    <p class="card-subtitle">Certifiés DIN Plus</p>
+                    <p class="card-price">Sac de 15kg à 7.50€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="women">
+                <div class="collection-thumbnail">
+                    <img src="images/bo.jpg" alt="Bûches de Hêtre 33cm">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Pouvoir Calorifique</span>
+                    <h3 class="card-title">Hêtre Qualité Pro</h3>
+                    <p class="card-subtitle">33cm - Parfait pour Insert</p>
+                    <p class="card-price">Stère à partir de 105€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="men">
+                <div class="collection-thumbnail">
+                    <img src="images/street-rebel.avif" alt="Bois de Découpe Mixte">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Gros Volume</span>
+                    <h3 class="card-title">Mixte Séchage Rapide</h3>
+                    <p class="card-subtitle">50cm - Essence variée</p>
+                    <p class="card-price">Stère à partir de 79€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="limited">
+                <div class="collection-thumbnail">
+                    <img src="images/avant-garde.avif" alt="Allume-feu naturel">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Le Petit Plus</span>
+                    <h3 class="card-title">Kit d'Allumage Naturel</h3>
+                    <p class="card-subtitle">Petits bois, copeaux, allume-feu</p>
+                    <p class="card-price">Kit complet à 19.90€</p>
+                </div>
+            </div>
+            <div class="collection-card" data-category="accessories">
+                <div class="collection-thumbnail">
+                    <img src="images/minimal-chic.avif" alt="Accessoires de cheminée">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Indispensable</span>
+                    <h3 class="card-title">Accessoires Foyer</h3>
+                    <p class="card-subtitle">Serviteurs, paniers, gants</p>
+                    <p class="card-price">À partir de 49€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured" id="featured">
+        <div class="featured-container">
+            <div class="testimonials">
+                <div class="testimonials-header">
+                    <h3>Ce que nos Clients Pense de notre Bois</h3>
+                    <p class="section-subtitle">Leurs témoignages, notre fierté</p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-quote">
+                            "J'ai enfin trouvé du bois *réellement* sec ! La livraison est rapide et les bûches sont bien fendues, c'est un gain de temps énorme. Je recommande BûShop les yeux fermés."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">P</div>
+                            <div class="author-info">
+                                <h4>Pierre L.</h4>
+                                <p>Propriétaire de Poêle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-quote">
+                            "Le Hêtre 33cm est parfait pour mon insert, il a un excellent pouvoir calorifique. En plus, le bois est local et certifié, c'est important pour moi. Merci BûShop !"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">V</div>
+                            <div class="author-info">
+                                <h4>Virginie D.</h4>
+                                <p>Cheminée Traditionnelle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <div class="testimonial-quote">
+                            "Service client au top. J'ai eu un doute sur le volume, ils m'ont rappelé pour m'expliquer la différence entre le stère et le m3. La livraison a été ponctuelle et soignée."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">J</div>
+                            <div class="author-info">
+                                <h4>Jean-Luc M.</h4>
+                                <p>Client Fidèle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2 class="section-title">Contactez l'Équipe BûShop</h2>
+                <p class="section-subtitle">Nous sommes là pour vous aider à choisir votre bois</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Jean" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Dupond" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet de votre demande</label>
+                            <input type="text" id="subject" name="subject" placeholder="Devis, livraison, essence de bois..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="J'aimerais commander 5 stères de chêne en 50cm..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Envoyer le Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Dépôt Principal et Retrait</h3>
+                            <p>Zone Artisanale Les Flammes<br>
+                            75000 Paris, France<br>
+                            Dépôt ouvert sur RDV</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Appelez-nous</h3>
+                            <p>Commandes: <a href="tel:+33123456789">+33 1 23 45 67 89</a><br>
+                            Support/Suivi: <a href="tel:+33123456780">+33 1 23 45 67 80</a><br>
+                            Lun-Sam, 8h-18h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-content">
+                            <h3>Écrivez-nous</h3>
+                            <p>Commandes: <a href="mailto:commandes@bushop.fr">commandes@bushop.fr</a><br>
+                            Partenariat: <a href="mailto:partenariat@bushop.fr">partenariat@bushop.fr</a><br>
+                            Comptabilité: <a href="mailto:compta@bushop.fr">compta@bushop.fr</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>BûShop</h3>
+                <p>Votre partenaire chaleur pour un hiver au top. Du bois de qualité, sec et prêt à l'emploi. Chauffez mieux, chauffez BûShop.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">t</a>
+                    <a href="#" class="social-link">i</a>
+                    <a href="#" class="social-link">p</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BûShop. Tous droits réservés. | Conçu par <a href="" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration: none;">CGA</a></p>
+            <div class="payment-methods">
+                <div class="payment-icon">VISA</div>
+                <div class="payment-icon">MC</div>
+                <div class="payment-icon">AMEX</div>
+                <div class="payment-icon">PAY</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="templatemo-noir-scripts.js"></script>
+</body>
+</html>
