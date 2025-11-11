@@ -25,6 +25,10 @@
             .checkout-container {
                 grid-template-columns: 1fr;
             }
+            .summary-area {
+                /* Remonte le panier sur mobile/tablette */
+                order: -1; 
+            }
         }
 
         /* Reprise du style du formulaire Contact (fond clair/blanc) */
@@ -109,10 +113,78 @@
         .summary-item {
             display: flex;
             justify-content: space-between;
+            align-items: center; /* Centrer verticalement */
             margin-bottom: 15px;
             font-size: 16px;
             color: var(--text-light);
+            flex-wrap: wrap; /* Passage à la ligne si pas assez de place */
         }
+        
+        /* Nouveau CSS pour les items interactifs */
+        .summary-item.cart-item {
+            align-items: flex-start;
+            flex-direction: column;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        
+        .summary-item .item-name {
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .summary-item-controls {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            padding: 5px 8px;
+            background: #222;
+            border: 1px solid var(--text-muted);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+            margin-right: 10px;
+            -moz-appearance: textfield; /* Cacher les flèches sur Firefox */
+        }
+        .quantity-input::-webkit-outer-spin-button,
+        .quantity-input::-webkit-inner-spin-button {
+            -webkit-appearance: none; /* Cacher les flèches sur Chrome/Safari */
+            margin: 0;
+        }
+        
+        .remove-btn {
+            background: none;
+            border: none;
+            color: var(--accent-hover);
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 0 5px;
+        }
+        
+        .remove-btn:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+
+        .item-price {
+            font-size: 16px;
+            color: white;
+            font-weight: 500;
+            margin-left: auto; /* Pousse le prix à droite */
+            margin-right: 15px;
+        }
+        /* Fin Nouveau CSS */
+
 
         .summary-total {
             border-top: 2px solid var(--accent);
@@ -261,8 +333,8 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="form-submit checkout-btn">
-                        Payer <span>285.00€</span> et Valider la Commande
+                    <button type="submit" class="form-submit checkout-btn" id="pay-button">
+                        Payer <span id="pay-button-total">285.00€</span> et Valider la Commande
                     </button>
                 </form>
                 <div class="secure-badge">Paiement sécurisé par <span>Stripe</span>. Vos données sont protégées.</div>
@@ -271,38 +343,48 @@
             <div class="summary-area">
                 <h3>Votre Panier BûShop</h3>
                 
-                <div class="summary-item">
-                    <span>Chêne Premium (50cm) - 2 Stères</span>
-                    <span>190.00€</span>
-                </div>
-                <div class="summary-item">
-                    <span>Filet de Bûches Sec (33cm) - 1 Filet</span>
-                    <span>15.00€</span>
-                </div>
-                <div class="summary-item">
-                    <span>Kit d'Allumage Naturel</span>
-                    <span>19.90€</span>
+                <div id="cart-items-container">
+                    <div class="summary-item cart-item" data-price="95.00">
+                        <span class="item-name">Chêne Premium (50cm) - Stère</span>
+                        <div class="summary-item-controls">
+                            <input type="number" class="quantity-input" value="" min="" data-item-id="chene">
+                            <span class="item-price">190.00€</span>
+                            <button class="remove-btn" data-item-id="chene" aria-label="Supprimer">×</button>
+                        </div>
+                    </div>
+                    <div class="summary-item cart-item" data-price="15.00">
+                        <span class="item-name">Filet de Bûches Sec (33cm)</span>
+                        <div class="summary-item-controls">
+                            <input type="number" class="quantity-input" value="1" min="" data-item-id="filet">
+                            <span class="item-price">15.00€</span>
+                            <button class="remove-btn" data-item-id="filet" aria-label="Supprimer">×</button>
+                        </div>
+                    </div>
+                    <div class="summary-item cart-item" data-price="19.90">
+                        <span class="item-name">Kit d'Allumage Naturel</span>
+                        <div class="summary-item-controls">
+                            <input type="number" class="quantity-input" value="1" min="" data-item-id="kit">
+                            <span class="item-price">19.90€</span>
+                            <button class="remove-btn" data-item-id="kit" aria-label="Supprimer">×</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <hr style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 20px 0;">
 
                 <div class="summary-item">
                     <span>Sous-total HT</span>
-                    <span>234.90€</span>
-                </div>
+                    <span id="summary-subtotal">224.90€</span> </div>
                 <div class="summary-item">
                     <span>TVA (20%)</span>
-                    <span>46.98€</span>
-                </div>
-                <div class="summary-item" style="font-weight: bold; color: var(--accent);">
+                    <span id="summary-tva">44.98€</span> </div>
+                <div class="summary-item" style="font-weight: bold; color: var(--accent);" data-shipping="3.12">
                     <span>Frais de Livraison Express (72H)</span>
-                    <span>3.12€</span>
-                </div>
+                    <span id="summary-shipping">3.12€</span> </div>
 
                 <div class="summary-total">
                     <span>Montant Total (TTC)</span>
-                    <span>285.00€</span>
-                </div>
+                    <span id="summary-total-amount">273.00€</span> </div>
 
                 <div class="payment-methods-logos">
                     <span class="payment-icon" style="width: auto; font-size: 14px; padding: 5px 10px;">VISA</span>
@@ -330,9 +412,83 @@
     </footer>
 
     <script src="templatemo-noir-scripts.js"></script>
+    
     <script>
-        // Le script JS pour gérer la navbar et le menu mobile (si tu l'as)
-        // ... (Tu peux ajouter ici le code pour la validation du formulaire de paiement) ...
+        // On s'assure que le DOM est chargé avant de lancer le script
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const cartContainer = document.getElementById('cart-items-container');
+            const shippingCost = 3.12; // Frais de port fixes
+            const tvaRate = 0.20; // 20%
+
+            // On chope les éléments à mettre à jour
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const tvaEl = document.getElementById('summary-tva');
+            const shippingEl = document.getElementById('summary-shipping');
+            const totalAmountEl = document.getElementById('summary-total-amount');
+            const payButtonTotalEl = document.getElementById('pay-button-total');
+
+            // LE CERVEAU 🧠: La fonction qui recalcule tout
+            function updateCartTotals() {
+                let currentSubtotal = 0;
+                
+                // 1. On boucle sur tous les items du panier
+                const cartItems = cartContainer.querySelectorAll('.cart-item');
+                
+                cartItems.forEach(item => {
+                    const unitPrice = parseFloat(item.dataset.price);
+                    const quantityInput = item.querySelector('.quantity-input');
+                    const quantity = parseInt(quantityInput.value);
+                    
+                    // Sécurité : si la quantité n'est pas un nombre ou est négative, on met 1
+                    if (isNaN(quantity) || quantity < 1) {
+                        quantityInput.value = 1;
+                        quantity = 1;
+                    }
+
+                    const itemTotalPrice = unitPrice * quantity;
+                    currentSubtotal += itemTotalPrice;
+                    
+                    // Mettre à jour le prix de l'item (ex: 95.00€ * 2 = 190.00€)
+                    item.querySelector('.item-price').textContent = `${itemTotalPrice.toFixed(2)}€`;
+                });
+
+                // 2. Calculer les totaux
+                const currentTVA = currentSubtotal * tvaRate;
+                const currentTotal = currentSubtotal + currentTVA + shippingCost;
+
+                // 3. Mettre à jour l'affichage (le DOM)
+                // .toFixed(2) c'est pour forcer 2 chiffres après la virgule, comme les vrais `senpai` du e-commerce
+                subtotalEl.textContent = `${currentSubtotal.toFixed(2)}€`;
+                tvaEl.textContent = `${currentTVA.toFixed(2)}€`;
+                shippingEl.textContent = `${shippingCost.toFixed(2)}€`;
+                totalAmountEl.textContent = `${currentTotal.toFixed(2)}€`;
+                payButtonTotalEl.textContent = `${currentTotal.toFixed(2)}€`; // On update aussi le bouton !
+            }
+
+            // GESTION DES ÉVÉNEMENTS (Les "Listeners")
+            
+            // On écoute ce qui se passe dans le conteneur du panier
+            cartContainer.addEventListener('input', (event) => {
+                // Si on touche à un champ "quantity-input"
+                if (event.target.classList.contains('quantity-input')) {
+                    updateCartTotals(); // On recalcule tout !
+                }
+            });
+
+            cartContainer.addEventListener('click', (event) => {
+                // Si on clique sur un bouton "remove-btn"
+                if (event.target.classList.contains('remove-btn')) {
+                    // On cherche l'item parent (.cart-item) et on le... SUPPRIME
+                    event.target.closest('.cart-item').remove();
+                    updateCartTotals(); // Et on recalcule !
+                }
+            });
+
+            // On lance un premier calcul au chargement de la page, au cas où
+            updateCartTotals();
+
+        });
     </script>
 </body>
 </html>
