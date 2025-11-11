@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BûShop - Le Bois de Chauffage de Qualité</title>
+    <title>BûShop</title>
     <link rel="stylesheet" href="templatemo-noir-fashion.css">
+    
+    <style>
+        .card-link-wrapper {
+            text-decoration: none; /* On vire le souligné, c'est moche */
+            color: inherit;      /* On garde la couleur du texte d'origine, pas le bleu ! */
+            display: contents;   /* L'astuce de ninja pour que la grille CSS fonctionne toujours ! */
+        }
+    </style>
 </head>
 <body>
     <nav id="navbar">
@@ -80,13 +88,13 @@
                 <div class="hero-image-wrapper">
                     <div class="hero-carousel">
                         <div class="carousel-slide active">
-                            <img src="images/noir-fashion-hero-01.avif" alt="Image de bûches de bois"> 
+                            <img src="noir-fashion-hero-01.avif" alt="Image de bûches de bois"> 
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/noir-fashion-hero-02.avif" alt="Image de cheminée">
+                            <img src="noir-fashion-hero-02.avif" alt="Image de cheminée">
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/noir-fashion-hero-03.avif" alt="Image de bois sec">
+                            <img src="noir-fashion-hero-03.avif" alt="Image de bois sec">
                         </div>
                         <div class="carousel-overlay"></div>
                         <div class="carousel-indicators">
@@ -123,94 +131,104 @@
         </div>
 
         <div class="grid" id="collectionsGrid">
-            <div class="collection-card" data-category="women">
-                <div class="collection-thumbnail">
-                    <img src="images/C.jpg" alt="Bûches de Chêne 50cm">
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="women">
+                    <div class="collection-thumbnail">
+                        <img src="C.jpg" alt="Bûches de Chêne 50cm">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Cœur de Chauffe</span>
+                        <h3 class="card-title">Chêne Premium</h3>
+                        <p class="card-subtitle">50cm - Séchage 2 Ans</p>
+                        <p class="card-price">Stère à partir de 95€</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-badge">Cœur de Chauffe</span>
-                    <h3 class="card-title">Chêne Premium</h3>
-                    <p class="card-subtitle">50cm - Séchage 2 Ans</p>
-                    <p class="card-price">Stère à partir de 95€</p>
+            </a>
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="limited">
+                    <div class="collection-thumbnail">
+                        <img src="h.jpg" alt="Filet de bois sec 33cm">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Livraison Express</span>
+                        <h3 class="card-title">Filet de Bûches Sec</h3>
+                        <p class="card-subtitle">Prêt à l'emploi (33cm)</p>
+                        <p class="card-price">Filet de 40L à 15€</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collection-card" data-category="limited">
-                <div class="collection-thumbnail">
-                    <img src="images/h.jpg" alt="Filet de bois sec 33cm">
+            </a>
+
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="men">
+                    <div class="collection-thumbnail">
+                        <img src="ch.jpg" alt="Bois tendre pour allumage">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Allumage Facile</span>
+                        <h3 class="card-title">Bouleau / Mélange Léger</h3>
+                        <p class="card-subtitle">33cm - Idéal pour démarrer</p>
+                        <p class="card-price">Stère à partir de 85€</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-badge">Livraison Express</span>
-                    <h3 class="card-title">Filet de Bûches Sec</h3>
-                    <p class="card-subtitle">Prêt à l'emploi (33cm)</p>
-                    <p class="card-price">Filet de 40L à 15€</p>
+            </a>
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="accessories">
+                    <div class="collection-thumbnail">
+                        <img src="f.jpg" alt="Sacs de Granulés Bois">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Pellets Certifiés</span>
+                        <h3 class="card-title">Granulés de Bois</h3>
+                        <p class="card-subtitle">Certifiés DIN Plus</p>
+                        <p class="card-price">Sac de 15kg à 7.50€</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collection-card" data-category="men">
-                <div class="collection-thumbnail">
-                    <img src="images/ch.jpg" alt="Bois tendre pour allumage">
+            </a>
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="women">
+                    <div class="collection-thumbnail">
+                        <img src="bo.jpg" alt="Bûches de Hêtre 33cm">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Pouvoir Calorifique</span>
+                        <h3 class="card-title">Hêtre Qualité Pro</h3>
+                        <p class="card-subtitle">33cm - Parfait pour Insert</p>
+                        <p class="card-price">Stère à partir de 105€</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-badge">Allumage Facile</span>
-                    <h3 class="card-title">Bouleau / Mélange Léger</h3>
-                    <p class="card-subtitle">33cm - Idéal pour démarrer</p>
-                    <p class="card-price">Stère à partir de 85€</p>
+            </a>
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="men">
+                    <div class="collection-thumbnail">
+                        <img src="Cop.jpg" alt="Bois de Découpe Mixte">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Gros Volume</span>
+                        <h3 class="card-title">Mixte Séchage Rapide</h3>
+                        <p class="card-subtitle">50cm - Essence variée</p>
+                        <p class="card-price">Stère à partir de 79€</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collection-card" data-category="accessories">
-                <div class="collection-thumbnail">
-                    <img src="images/f.jpg" alt="Sacs de Granulés Bois">
+            </a>
+            
+            <a href="paiement.html" class="card-link-wrapper">
+                <div class="collection-card" data-category="limited">
+                    <div class="collection-thumbnail">
+                        <img src="Kit.jpg" alt="Allume-feu naturel">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">Le Petit Plus</span>
+                        <h3 class="card-title">Kit d'Allumage Naturel</h3>
+                        <p class="card-subtitle">Petits bois, copeaux, allume-feu</p>
+                        <p class="card-price">Kit complet à 19.90€</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-badge">Pellets Certifiés</span>
-                    <h3 class="card-title">Granulés de Bois</h3>
-                    <p class="card-subtitle">Certifiés DIN Plus</p>
-                    <p class="card-price">Sac de 15kg à 7.50€</p>
-                </div>
-            </div>
-            <div class="collection-card" data-category="women">
-                <div class="collection-thumbnail">
-                    <img src="images/bo.jpg" alt="Bûches de Hêtre 33cm">
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">Pouvoir Calorifique</span>
-                    <h3 class="card-title">Hêtre Qualité Pro</h3>
-                    <p class="card-subtitle">33cm - Parfait pour Insert</p>
-                    <p class="card-price">Stère à partir de 105€</p>
-                </div>
-            </div>
-            <div class="collection-card" data-category="men">
-                <div class="collection-thumbnail">
-                    <img src="images/street-rebel.avif" alt="Bois de Découpe Mixte">
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">Gros Volume</span>
-                    <h3 class="card-title">Mixte Séchage Rapide</h3>
-                    <p class="card-subtitle">50cm - Essence variée</p>
-                    <p class="card-price">Stère à partir de 79€</p>
-                </div>
-            </div>
-            <div class="collection-card" data-category="limited">
-                <div class="collection-thumbnail">
-                    <img src="images/avant-garde.avif" alt="Allume-feu naturel">
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">Le Petit Plus</span>
-                    <h3 class="card-title">Kit d'Allumage Naturel</h3>
-                    <p class="card-subtitle">Petits bois, copeaux, allume-feu</p>
-                    <p class="card-price">Kit complet à 19.90€</p>
-                </div>
-            </div>
-            <div class="collection-card" data-category="accessories">
-                <div class="collection-thumbnail">
-                    <img src="images/minimal-chic.avif" alt="Accessoires de cheminée">
-                </div>
-                <div class="card-content">
-                    <span class="card-badge">Indispensable</span>
-                    <h3 class="card-title">Accessoires Foyer</h3>
-                    <p class="card-subtitle">Serviteurs, paniers, gants</p>
-                    <p class="card-price">À partir de 49€</p>
-                </div>
-            </div>
+            </a>
         </div>
     </section>
 
